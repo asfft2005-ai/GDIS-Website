@@ -4,47 +4,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GDIS Website</title>
+    <title>GDIS Website - Beta 1</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           DREAMCORE NEON FLUID - CSS
+           ========================================= */
+        :root {
+            --neon-pink: #ff00ff;
+            --neon-blue: #00ffff;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            /* Cosmic deep space background */
+            background: radial-gradient(circle at 50% 50%, #1a0b2e, #05010a);
+            font-family: 'Outfit', sans-serif;
+            color: #f0f0f0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Animated Fluid Background Blobs (Nebula/Liquid feel) */
+        .blob {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: -1;
+            transition: transform 0.2s ease-out;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--neon-pink);
+            top: -10%;
+            left: 10%;
+            opacity: 0.35;
+        }
+
+        .blob-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--neon-blue);
+            bottom: -10%;
+            right: 5%;
+            opacity: 0.25;
+        }
+
+        /* Glassmorphism Container (Clay/Soap/Mist feel) */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin: 20px 0;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 255, 255, 0.15);
+        }
+
+        /* Fixed Image Syntax */
+        .hero-img {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* Neon Typography */
+        .neon-text {
+            font-size: 2.8rem;
+            margin: 10px 0;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 25px rgba(255, 0, 255, 0.4);
+        }
+
+        h2 {
+            font-weight: 300;
+            font-size: 1.2rem;
+            color: #d1c4e9;
+            line-height: 1.6;
+        }
+
+        /* Navigation Buttons */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* Button Hover Effects */
+        .glass-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .glass-btn:hover::before {
+            left: 100%;
+        }
+
+        /* Footer overrides */
+        footer {
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- HEADER (top of page) -->
-    <header>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
 
-     <div style="text-align:center;">
-    <img src="gdis.jpg" alt="GDIS Front Gate" 
-           style="width:100" "max-width:100" "height:400px" object-fit:cover;">
-</div>
-<hr>
-        <h1>GDIS Website - Beta 1</h1>
-<hr>
+    <header class="glass-panel">
+        
+        <img src="gdis.jpg" alt="GDIS Front Gate" class="hero-img">
+        
+        <h1 class="neon-text">GDIS Website - Beta 1</h1>
+        
         <h2>Explore our website to learn more about our mission, updates, and community.</h2>
 
         <nav>
-         <a href="webpage2.html"><button>Home</button></a>
-         <a href="about.html"><button>About</button></a>
-         <a href="contact.html"><button>Contact</button></a>
-         <a href="credits.html"><button>Credits</button></a>
+            <a href="webpage2.html" class="glass-btn">Home</a>
+            <a href="about.html" class="glass-btn">About</a>
+            <a href="contact.html" class="glass-btn">Contact</a>
+            <a href="credits.html" class="glass-btn">Credits</a>
         </nav>
 
     </header>
 
-    <!-- MAIN CONTENT -->
     <main>
-
-        <section>
-            <h2>Welcome</h2>
+        <section class="glass-panel">
+            <h2 class="neon-text" style="font-size: 2rem;">Welcome</h2>
             <p>This is the official GDIS beta website.</p>
         </section>
-
     </main>
 
-    <!-- FOOTER -->
-<hr>
-<footer style="background-color:#222; color:white; padding:10px;">
-    <p>© 2026 GDIS Website</p>
-</footer>
+    <footer class="glass-panel">
+        <p>© 2026 GDIS Website</p>
+    </footer>
+
+    <script>
+        // Interactive Fluid Blob Movement
+        document.addEventListener('mousemove', (event) => {
+            // Get mouse position relative to window size
+            const x = event.clientX / window.innerWidth;
+            const y = event.clientY / window.innerHeight;
+            
+            const blob1 = document.querySelector('.blob-1');
+            const blob2 = document.querySelector('.blob-2');
+            
+            // Move blobs slightly opposite to the mouse direction for depth
+            blob1.style.transform = `translate(-${x * 60}px, -${y * 60}px)`;
+            blob2.style.transform = `translate(${x * 60}px, ${y * 60}px)`;
+        });
+    </script>
 
 </body>
 
